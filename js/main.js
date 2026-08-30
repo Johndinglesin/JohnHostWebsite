@@ -1,5 +1,3 @@
-
-
 (function () {
   "use strict";
 
@@ -8,12 +6,10 @@
   var PANEL = cfg.panelUrl || "";
   var FORM = cfg.applicationFormUrl || "";
 
-  
-
   function getCookie(name) {
     var re = new RegExp("(?:^|; )" + name + "=([^;]*)");
-    var match = document.cookie.match(re);
-    return match ? decodeURIComponent(match[1]) : null;
+    var m = document.cookie.match(re);
+    return m ? decodeURIComponent(m[1]) : null;
   }
 
   function setCookie(name, value, days) {
@@ -26,8 +22,6 @@
     document.cookie = name + "=" + encodeURIComponent(value) + expires + "; path=/; SameSite=Lax";
   }
 
-  
-
   function wireApply(btn) {
     if (STOCK > 0) {
       btn.href = FORM;
@@ -39,13 +33,14 @@
       btn.classList.add("disabled");
       btn.setAttribute("aria-disabled", "true");
       btn.removeAttribute("href");
-      btn.addEventListener("click", function (e) {
-        e.preventDefault();
-      });
+      if (!btn.__jhBlocked) {
+        btn.__jhBlocked = true;
+        btn.addEventListener("click", function (e) {
+          e.preventDefault();
+        });
+      }
     }
   }
-
-  
 
   function wirePanel(btn) {
     if (PANEL) {
@@ -54,8 +49,6 @@
       btn.rel = "noopener";
     }
   }
-
-  
 
   function renderStock(widget) {
     var num = widget.querySelector("[data-stock-num]");
@@ -79,7 +72,14 @@
     }
   }
 
-  
+  function updateConsole() {
+    var capEl = document.querySelector("[data-console-cap]");
+    var meterEl = document.querySelector("[data-console-meter]");
+    var total = 6;
+    var used = Math.max(total - STOCK, 0);
+    if (capEl) capEl.textContent = used + " / " + total + " slots";
+    if (meterEl) meterEl.style.width = Math.round((used / total) * 100) + "%";
+  }
 
   function runCookieBanner(banner) {
     var saved = getCookie("jh_consent");
@@ -87,35 +87,20 @@
       banner.remove();
       return;
     }
-
     document.getElementById("cookie-yes").addEventListener("click", function () {
-      
       setCookie("jh_consent", "yes", 120);
       banner.remove();
     });
-
     document.getElementById("cookie-no").addEventListener("click", function () {
-      
       banner.remove();
     });
-
     window.setTimeout(function () {
       banner.classList.add("show");
     }, 400);
   }
 
-  
-
   function wireConsole() {
-    var capEl = document.querySelector("[data-console-cap]");
-    var meterEl = document.querySelector("[data-console-meter]");
-    var total = 6; 
-    var used = Math.max(total - STOCK, 0);
-    var pct = Math.round((used / total) * 100);
-
-    if (capEl) capEl.textContent = used + " / " + total + " slots";
-    if (meterEl) meterEl.style.width = pct + "%";
-
+    updateConsole();
     var traffic = document.querySelector("[data-console-traffic]");
     if (traffic) {
       var lines = ["IDLE", "MITIGATING", "BACKUP", "SCANNING", "NODES SYNCED"];
@@ -126,8 +111,6 @@
       }, 4200);
     }
   }
-
-  
 
   var anchor = document.getElementById("stock-widget-anchor");
   if (anchor) {
@@ -143,12 +126,9 @@
         '<a class="btn btn-panel" href="' + PANEL + '" target="_blank" rel="noopener">Panel</a>';
     }
     widgetHtml += "</div>";
-
     anchor.innerHTML = widgetHtml;
     renderStock(anchor.querySelector(".stock-badge"));
   }
-
-  
 
   var cookieHost = document.getElementById("cookie-anchor");
   if (cookieHost) {
@@ -169,18 +149,12 @@
     runCookieBanner(cookieHost.querySelector("#cookie-banner"));
   }
 
-  
-
+  document.querySelectorAll("[data-panel]").forEach(wirePanel);
   document.querySelectorAll("[data-stock-card]").forEach(function (card) {
     renderStock(card);
   });
-
-  
-
-  wireConsole();
-
-  
-
   document.querySelectorAll("[data-apply]").forEach(wireApply);
-  document.querySelectorAll("[data-panel]").forEach(wirePanel);
+
+  updateConsole();
+  wireConsole();
 })();
