@@ -1,4 +1,4 @@
-const AVAILABLE_SERVERS = 2;
+const AVAILABLE_SERVERS = 3;
 const PANEL_URL = "https://pannel.johnhost.xyz";
 const APPLICATION_FORM_URL =
   "https://docs.google.com/forms/d/e/1FAIpQLSeMoM9Sh7ejZdHiC1GeXEk_gjFyq5xsM-4CfGjZEogRGzT62A/viewform?usp=header";
