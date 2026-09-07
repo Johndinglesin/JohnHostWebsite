@@ -1021,3 +1021,43 @@ footer {
   font-size: 0.82rem;
   color: var(--muted);
 }
+
+/* Per-server allocation + disclaimers */
+.allot-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.allot-list li {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+
+.allot-list li b {
+  display: block;
+  color: var(--accent);
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.allot-list li span {
+  color: var(--muted);
+}
+
+.note {
+  background: var(--bg-soft);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 18px;
+  line-height: 1.6;
+}
