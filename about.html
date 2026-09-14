@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About — JohnHost</title>
+  <meta name="description" content="How JohnHost works and why it exists." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="stylesheet" href="css/style.css?v=3" />
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html"><img class="brand-logo" src="logo-nav.png" alt="JohnHost logo" /><span class="brand-name">John<span class="accent">Host</span></span></a>
+
+      <nav aria-label="Primary navigation">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="news.html">News</a></li>
+          <li><a href="about.html" class="active" aria-current="page">About</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="staff.html">Staff</a></li>
+
+          <li class="nav-cta"><a href="apply.html" class="btn btn-primary btn-sm">Apply now</a></li>
+        </ul>
+      </nav>
+
+      <span id="stock-widget-anchor"></span>
+    </div>
+  </header>
+
+  <main id="main" class="prose">
+    <h1>About</h1>
+    <p class="updated">The short version of why this exists and how it's wired up.</p>
+
+    <p>
+      Honestly? The website is not the hard part. I've rebuilt this thing like four
+      times and I'm still tweaking spacing at 11pm, which I guess is just who I am
+      now. It all started because I wanted to run Minecraft servers without some big
+      host charging me every month for a box I could already run on hardware that
+      was just sitting around.
+    </p>
+
+    <h2>How it all works</h2>
+    <p>
+      Most hosts rent racks in a datacenter and mark everything up. I didn't want to
+      do that. So JohnHost runs on the least glamorous setup I could get away with:
+    </p>
+    <ul>
+      <li>
+        <b>The domain</b> goes through Cloudflare. DNS, proxying, the whole thing —
+        essentially free, fast, and I don't have to babysit it.
+      </li>
+      <li>
+        <b>Port forwarding</b> is handled by a proxy I built myself. Instead of
+        messing with every router that a machine sits behind, traffic lands at the
+        proxy, it figures out where it should go, and hands it off. Not glamorous,
+        but it works.
+      </li>
+      <li>
+        <b>The actual servers</b> run on laptops and PCs that friends and people have
+        lent me. When someone shares a machine, it becomes a node. It's distributed,
+        it's unglamorous, and it's definitely not a datacenter — but the "fleet" is
+        just hardware people were kind enough to help with.
+      </li>
+    </ul>
+
+    <h2>Why I bother</h2>
+    <p>
+      Because hosting a Minecraft server shouldn't cost money just to play with your
+      friends. That's the whole pitch. I got tired of watching good communities die
+      because nobody wanted to pay ten bucks a month forever. I'd rather run free
+      servers on borrowed machines and eat the long tail of weird problems than
+      charge people for something I can provide for basically nothing.
+    </p>
+    <p>
+      There's also the part where I actually get to learn by doing. The proxy, the
+      Cloudflare setup, babysitting hardware people trust me with — there's a lot to
+      figure out, and I'm still figuring it out. It's a work in progress, and I've
+      mostly made peace with that.
+    </p>
+
+    <h2>What I use</h2>
+    <p>
+      In case you're curious about the stack behind the curtain:
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com" target="_blank" rel="noopener">GitHub</a> —
+        hosting this site's files.
+      </li>
+      <li>
+        <a href="https://www.cloudflare.com" target="_blank" rel="noopener">Cloudflare</a> —
+        the domain and DNS.
+      </li>
+      <li>
+        <a href="https://pelican.dev" target="_blank" rel="noopener">Pelican Panel</a> —
+        the game panel.
+      </li>
+    </ul>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img class="brand-logo" src="logo-nav.png" alt="JohnHost logo" width="28" height="28" />
+          <span class="brand-name">John<span class="accent">Host</span></span>
+        </a>
+        <p class="about">
+          An independent, free-of-charge Minecraft server host. Not affiliated with
+          Mojang or Microsoft.
+        </p>
+      </div>
+      <div>
+        <h4>Product</h4>
+        <ul>
+          <li><a href="apply.html">Apply</a></li>
+          <li><a href="rules.html">Rules</a></li>
+          <li><a href="staff.html">Staff</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="news.html">News</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <ul>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>JohnHost — free Minecraft server hosting.</span>
+    </div>
+  </footer>
+
+  <script src="js/config.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
+
+  <div id="cookie-anchor"></div>
+</body>
+</html>
