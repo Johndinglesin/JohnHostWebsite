@@ -847,6 +847,11 @@ footer {
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .cookie-pop {
