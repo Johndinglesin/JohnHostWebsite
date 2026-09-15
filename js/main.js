@@ -81,6 +81,19 @@
     if (meterEl) meterEl.style.width = Math.round((used / total) * 100) + "%";
   }
 
+  function wireConsole() {
+    updateConsole();
+    var traffic = document.querySelector("[data-console-traffic]");
+    if (traffic) {
+      var lines = ["IDLE", "MITIGATING", "BACKUP", "SCANNING", "NODES SYNCED"];
+      var i = 0;
+      window.setInterval(function () {
+        i = (i + 1) % lines.length;
+        traffic.textContent = lines[i];
+      }, 4200);
+    }
+  }
+
   function runCookieBanner(banner) {
     var saved = getCookie("jh_consent");
     if (saved === "yes" || saved === "no") {
@@ -97,19 +110,6 @@
     window.setTimeout(function () {
       banner.classList.add("show");
     }, 400);
-  }
-
-  function wireConsole() {
-    updateConsole();
-    var traffic = document.querySelector("[data-console-traffic]");
-    if (traffic) {
-      var lines = ["IDLE", "MITIGATING", "BACKUP", "SCANNING", "NODES SYNCED"];
-      var i = 0;
-      window.setInterval(function () {
-        i = (i + 1) % lines.length;
-        traffic.textContent = lines[i];
-      }, 4200);
-    }
   }
 
   var anchor = document.getElementById("stock-widget-anchor");
@@ -149,6 +149,31 @@
     runCookieBanner(cookieHost.querySelector("#cookie-banner"));
   }
 
+  function setupModal() {
+    var overlay = document.getElementById("setup-modal");
+    if (!overlay) return;
+    var close = document.getElementById("setup-modal-close");
+
+    function hide() {
+      overlay.classList.remove("open");
+    }
+
+    overlay.addEventListener("click", hide);
+    if (close) {
+      close.addEventListener("click", function (e) {
+        e.stopPropagation();
+        hide();
+      });
+    }
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") hide();
+    });
+
+    window.setTimeout(function () {
+      overlay.classList.add("open");
+    }, 400);
+  }
+
   document.querySelectorAll("[data-panel]").forEach(wirePanel);
   document.querySelectorAll("[data-stock-card]").forEach(function (card) {
     renderStock(card);
@@ -157,4 +182,5 @@
 
   updateConsole();
   wireConsole();
+  setupModal();
 })();

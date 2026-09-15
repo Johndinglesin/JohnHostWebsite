@@ -558,11 +558,6 @@ section {
   border: 1px solid var(--line);
   border-radius: var(--radius);
   padding: 22px;
-  transition: border-color 0.15s ease;
-}
-
-.card:hover {
-  border-color: var(--line-2);
 }
 
 .card .icon {
@@ -1060,4 +1055,94 @@ footer {
   font-size: 0.9rem;
   margin-top: 18px;
   line-height: 1.6;
+}
+
+/* Setup / announcement modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(5, 7, 9, 0.78);
+}
+
+.modal-overlay.open {
+  display: flex;
+}
+
+.modal {
+  position: relative;
+  width: min(460px, 100%);
+  background: var(--card);
+  border: 1px solid var(--line-2);
+  border-top: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 34px 30px 30px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+  text-align: center;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-icon {
+  width: 52px;
+  height: 52px;
+  margin: 0 auto 16px;
+  border-radius: 4px;
+  background: rgba(106, 165, 255, 0.12);
+  border: 1px solid rgba(106, 165, 255, 0.28);
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-tag {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.modal h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+
+.modal p {
+  color: var(--muted);
+  margin: 0 auto;
+  line-height: 1.68;
+  max-width: 360px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+}
+
+.modal-close:hover {
+  color: var(--text);
+  border-color: var(--accent);
+  background: rgba(106, 165, 255, 0.08);
 }
