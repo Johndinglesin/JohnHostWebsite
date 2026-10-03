@@ -819,6 +819,12 @@ footer {
   gap: 8px;
 }
 
+/* An unlabeled link column starts with a <ul>, so nudge it down to line up
+   with the labeled columns that have an <h4> above their list. */
+.footer-grid > div > ul:first-child {
+  margin-top: 32px;
+}
+
 .footer-grid a {
   color: var(--text);
   font-size: 0.9rem;
