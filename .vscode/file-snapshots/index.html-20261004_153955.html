@@ -60,14 +60,21 @@
         <div class="console" aria-label="Live status summary">
           <div class="console-head">
             <span class="title">JOHNHOST — STATUS</span>
-            <span class="traffic" data-console-traffic>Operational</span>
+            <span class="traffic" data-console-traffic>IDLE</span>
           </div>
           <div class="console-body">
+            <div class="console-row">
+              <span class="k">Network</span>
+              <span class="v ok" data-console-up>Operational</span>
+            </div>
+            <div class="console-row">
+              <span class="k">Backups</span>
+              <span class="v ok">Daily</span>
+            </div>
             <div class="log" aria-hidden="true">
               <span class="t">14:02:11</span> node-wi filtered 12.4 MB of traffic <span class="ok">[OK]</span><br />
               <span class="t">14:03:47</span> node-tn backup complete (2.1 GB) <span class="ok">[OK]</span><br />
-              <span class="t">14:05:03</span> Website server starting up! <span class="warn" style="color:var(--warn)">[Booting]</span>
-              <span class="t">14:07:04</span> Website server is now online <span class="ok">[OK]</span><br />
+              <span class="t">14:05:03</span> node-deu at capacity <span class="warn" style="color:var(--warn)">[WAIT]</span>
             </div>
           </div>
         </div>
