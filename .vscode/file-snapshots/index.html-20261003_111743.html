@@ -52,7 +52,7 @@
           <ul class="chips">
             <li><span class="dot" aria-hidden="true"></span> Free of charge</li>
             <li><span class="dot" aria-hidden="true"></span> DDoS mitigation included</li>
-            <li><span class="dot warn-dot" aria-hidden="true"></span> 1 port per server</li>
+            <li><span class="dot warn-dot" aria-hidden="true"></span> 1 port per instance</li>
             <li><span class="dot" aria-hidden="true"></span> Daily backups</li>
           </ul>
         </div>
@@ -215,18 +215,8 @@
     </div>
   </div>
 
-    <script>
-    (function () {
-      var v = Date.now();
-      var files = ["js/config.js", "js/main.js"];
-      for (var i = 0; i < files.length; i++) {
-        var s = document.createElement("script");
-        s.src = files[i] + "?v=" + v;
-        s.async = false;
-        document.body.appendChild(s);
-      }
-    })();
-  </script>
+  <script src="js/config.js?v=3"></script>
+  <script src="js/main.js?v=3"></script>
 
   <div id="cookie-anchor"></div>
 </body>
