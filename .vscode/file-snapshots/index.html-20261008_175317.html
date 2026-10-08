@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JohnHost — Free Minecraft Server Hosting</title>
-  <meta name="description" content="JohnHost is an independent, free-of-charge Minecraft server host. DDoS mitigation, daily backups, and two ports per instance." />
+  <title>JohnHost — Free Minecraft and Website Hosting</title>
+  <meta name="description" content="JohnHost is an independent, free-of-charge Minecraft and website host. DDoS mitigation, daily backups, and one port per instance." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="stylesheet" href="css/style.css?v=3" />
+  <meta name="status-heartbeat" content="ok">
 </head>
 <body>
 
@@ -23,6 +24,7 @@
         <ul class="nav-links">
           <li><a href="index.html" class="active" aria-current="page">Home</a></li>
           <li><a href="news.html">News</a></li>
+          <li><a href="about.html">About</a></li>
           <li><a href="rules.html">Rules</a></li>
           <li><a href="staff.html">Staff</a></li>
 
@@ -38,53 +40,33 @@
     <section class="hero">
       <div class="hero-grid">
         <div>
-          <h1>Free, low-overhead <span class="accent">Minecraft</span> hosting.</h1>
+          <h1>Free, low-overhead <span class="accent">Minecraft</span> and website hosting.</h1>
           <p class="tagline">
-            JohnHost is a small independent host providing Minecraft servers at no
-            cost — no payment model, no trial window, no hidden fees. Instances run
-            on shared physical nodes in three regions.
+            JohnHost is a small independent host providing Minecraft and website hosting at no
+            cost — no payment model, no trial window, no hidden fees.
           </p>
           <div class="cta">
-            <a href="apply.html" class="btn btn-primary btn-lg">Apply for a free server</a>
+            <a href="apply.html" class="btn btn-primary btn-lg">Apply for a server</a>
             <a href="#specs" class="btn btn-ghost btn-lg">Review specifications</a>
           </div>
           <ul class="chips">
             <li><span class="dot" aria-hidden="true"></span> Free of charge</li>
             <li><span class="dot" aria-hidden="true"></span> DDoS mitigation included</li>
-            <li><span class="dot warn-dot" aria-hidden="true"></span> 2 ports per instance</li>
+            <li><span class="dot" aria-hidden="true"></span> Minecraft &amp; web hosting</li>
             <li><span class="dot" aria-hidden="true"></span> Daily backups</li>
           </ul>
         </div>
 
         <div class="console" aria-label="Live status summary">
           <div class="console-head">
-            <span class="title">JOHN HOST — STATUS</span>
-            <span class="traffic" data-console-traffic>IDLE</span>
+            <span class="title">JOHNHOST — STATUS</span>
+            <span class="traffic" data-console-traffic>Operational</span>
           </div>
           <div class="console-body">
-            <div class="console-row">
-              <span class="k">Network</span>
-              <span class="v ok" data-console-up>Operational</span>
-            </div>
-            <div class="console-row">
-              <span class="k">Protected</span>
-              <span class="v ok">DDoS mitigation</span>
-            </div>
-            <div class="console-row">
-              <span class="k">Capacity used</span>
-              <span class="v" data-console-cap>4 / 6 slots</span>
-            </div>
-            <div>
-              <div class="meter" aria-hidden="true"><span data-console-meter style="width: 66%"></span></div>
-            </div>
-            <div class="console-row">
-              <span class="k">Region headroom</span>
-              <span class="v">3 regions</span>
-            </div>
             <div class="log" aria-hidden="true">
-              <span class="t">14:02:11</span> node-wis filtered 12.4 MB of traffic <span class="ok">[OK]</span><br />
-              <span class="t">14:03:47</span> node-tenn backup complete (2.1 GB) <span class="ok">[OK]</span><br />
-              <span class="t">14:05:03</span> node-deu at capacity <span class="warn" style="color:var(--warn)">[WAIT]</span>
+              <span class="t">14:02:11</span> node-wi filtered 12.4 MB of traffic <span class="ok">[OK]</span><br />
+              <span class="t">14:03:47</span> node-tn backup complete (2.1 GB) <span class="ok">[OK]</span><br />
+              <span class="t">14:05:03</span> Website server starting up! <span class="warn" style="color:var(--warn)">[Booting]</span>
             </div>
           </div>
         </div>
@@ -95,13 +77,13 @@
         <div class="section-head">
           <div>
             <div class="kicker">Node fleet</div>
-            <h2>Hardware and capacity</h2>
+            <h2>Hardware</h2>
             <p>Instances are provisioned on the fleet below. Node assignment depends on capacity available at application time.</p>
           </div>
         </div>
 
         <table class="spec-table">
-          <caption>Node specifications. Germany is currently at capacity.</caption>
+          <caption>Node specifications. Germany and India are currently at capacity.</caption>
           <thead>
             <tr>
               <th scope="col">Node</th>
@@ -147,16 +129,76 @@
             </tr>
           </tbody>
         </table>
-
-        <p class="note">
-          Each server instance is allocated 1 core, 6 GB of RAM (more can be
-          requested when available), 64 GB of storage, and 2 backups. These limits
-          keep shared node resources fair for everyone — they are the same on every
-          node regardless of the underlying hardware listed above.
-        </p>
       </div>
     </section>
 
+    <section class="wrap" id="minecraft">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Minecraft</div>
+          <h2>Minecraft servers</h2>
+          <p>Vanilla or modded, whatever the server needs. Every instance gets the same
+          allocation so nothing hogs a node and everyone else still has a playable server.</p>
+        </div>
+      </div>
+
+      <div class="allot-list" role="list" aria-label="Per-server allocation">
+        <div role="listitem">
+          <b>1 core</b>
+          <span>per server</span>
+        </div>
+        <div role="listitem">
+          <b>4 GB RAM</b>
+          <span>more can be requested</span>
+        </div>
+        <div role="listitem">
+          <b>32 GB storage</b>
+          <span>per server</span>
+        </div>
+        <div role="listitem">
+          <b>2 backups</b>
+          <span>included</span>
+        </div>
+      </div>
+
+      <p class="note">
+        These limits keep shared node resources fair for everyone — they are the same on every
+        node regardless of the underlying hardware listed above.
+      </p>
+    </section>
+
+    <section class="wrap" id="web-hosting">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Web hosting</div>
+          <h2>Website hosting</h2>
+          <p>Static sites hosted on shared hardware. Same idea as the
+          Minecraft hosting, applied to websites — free, and capped so one site can't eat
+          the node.</p>
+        </div>
+      </div>
+
+      <div class="allot-list" role="list" aria-label="Per-site allocation">
+        <div role="listitem">
+          <b>5 GB SSD</b>
+          <span>storage per site</span>
+        </div>
+        <div role="listitem">
+          <b>50% CPU</b>
+          <span>shared allocation</span>
+        </div>
+        <div role="listitem">
+          <b>512 MB RAM</b>
+          <span>per site</span>
+        </div>
+      </div>
+
+      <p class="note">
+        Anything resource-heavy (video, large databases, crypto, mail
+        servers) won't fit these limits — see the <a href="rules.html">Rules</a> before
+        you upload anything.
+      </p>
+    </section>
     <section class="wrap">
       <div class="apply-panel" data-stock-card>
         <div class="kicker">Get started</div>
@@ -166,7 +208,6 @@
           basis as availability permits. Apply when slots are shown as available.
         </p>
         <a data-apply class="btn btn-primary btn-lg btn-block">Apply for a free server</a>
-        <p class="mt" data-stock-out>No instances are currently available. Applications reopen when a slot frees up.</p>
       </div>
     </section>
   </main>
@@ -184,12 +225,9 @@
         </p>
       </div>
       <div>
-        <h4>Product</h4>
+        <h4>Status</h4>
         <ul>
-          <li><a href="apply.html">Apply</a></li>
-          <li><a href="rules.html">Rules</a></li>
-          <li><a href="staff.html">Staff</a></li>
-          <li><a href="news.html">News</a></li>
+          <li><a href="https://status.johnhost.win/">JohnHost Status</a></li>
         </ul>
       </div>
       <div>
@@ -201,12 +239,41 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>JohnHost — free Minecraft server hosting. PS.Your Gay</span>
+      <span>JohnHost — free Minecraft server hosting.</span>
+      <span>Support: <a href="mailto:JohnHost-support@proton.me">JohnHost-support@proton.me</a></span>
     </div>
   </footer>
 
-  <script src="js/config.js?v=3"></script>
-  <script src="js/main.js?v=3"></script>
+  <div class="modal-overlay" id="setup-modal" role="dialog" aria-modal="true" aria-labelledby="setup-modal-title" aria-describedby="setup-modal-body">
+    <div class="modal">
+      <button type="button" class="modal-close" id="setup-modal-close" aria-label="Close announcement">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+      </button>
+      <div class="modal-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+      </div>
+      <span class="modal-tag">Notice</span>
+      <h2 id="setup-modal-title">Still setting some things up</h2>
+      <p id="setup-modal-body">
+        Some of the nodes aren't fully configured yet. We're working as hard as we can to
+        get JohnHost up and running, so hang tight — servers will be up as soon as
+        possible. 
+      </p>
+    </div>
+  </div>
+
+    <script>
+    (function () {
+      var v = Date.now();
+      var files = ["js/config.js", "js/main.js"];
+      for (var i = 0; i < files.length; i++) {
+        var s = document.createElement("script");
+        s.src = files[i] + "?v=" + v;
+        s.async = false;
+        document.body.appendChild(s);
+      }
+    })();
+  </script>
 
   <div id="cookie-anchor"></div>
 </body>
