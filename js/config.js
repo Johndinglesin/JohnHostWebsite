@@ -1,4 +1,4 @@
-const AVAILABLE_SERVERS = 15;
+const AVAILABLE_SERVERS = 5;
 const PANEL_URL = "https://panel.johnhost.win";
 const APPLICATION_FORM_URL =
   "https://tally.so/r/J9Q4r7";
